@@ -37,7 +37,6 @@ class _BibleVerseWidgetState extends State<BibleVerseWidget> {
       final response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
-        print(data['verses']);
         return data['text'];
       }
     } catch (e) {
@@ -108,7 +107,6 @@ class _BibleVerseWidgetState extends State<BibleVerseWidget> {
             onPressed: () {
               final future = fetchBibleVerse();
               setState(() {
-                // Assign the future to a variable
                 _verseFuture = future;
               });
             },
