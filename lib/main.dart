@@ -3,12 +3,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         body: SafeArea(
           child: BibleVerseWidget(),
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
 }
 
 class BibleVerseWidget extends StatefulWidget {
+  const BibleVerseWidget({super.key});
+
   @override
   _BibleVerseWidgetState createState() => _BibleVerseWidgetState();
 }
